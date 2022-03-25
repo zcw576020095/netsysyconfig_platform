@@ -195,7 +195,7 @@ def send_email(email,code):
     html_content = '''<p>注册确认链接<a href="https://{}/confirm/?code={}" target=blank>https://www.baidu.com</a>,测试邮件！</p>
                       <p>请点击上方链接完成注册确认！</p>
                       <p>此链接有效期为{}天！</p>
-                      '''.format('127.0.0.1.vip:5000',code,settings.CONFIRM_DAYS)
+                      '''.format('127.0.0.1:5000',code,settings.CONFIRM_DAYS)
 
 
     msg = EmailMultiAlternatives(subject, text_content, settings.EMAIL_HOST_USER, [email])
