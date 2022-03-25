@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    {% if request.session.is_login %}
+    <h1 style="font-size: 30px;margin-left: 10px">你好，{{ request.session.user_name }}! 欢迎回来！</h1>
+        <hr>
+    <style>
+        b{
+            width:100px;
+            height: 50px;
+            color: #5bc0de;
+            margin-left: 10px;
+        }
+        select{
+            width: 120px;
+            height: 20px;
+            clolor:#5bc0de;
+        }
+    </style>
+    <form action="#" method="post">
+    {% csrf_token %}
+    {{ form }}
+        <b style="font-size: 20px;">选择要断网区域</b><br>
+    <select name="net_area">
+        <option>亦庄机房</option>
+        <!-- 待扩展 <option>区域2</option>
+        <option>区域3</option>
+        <option>区域4</option> -->
+    </select>
+    <input type="submit" style="background-color:red" name="click" value="断网" />
+    <input type="submit" style="background-color:green" name="click" value="联网" />
+    </form>
+        {% if messages %}
+        <script>
+            {% for msg in messages %}
+                alert('{{ msg.message }}');
+            {% endfor %}
+        </script>
+    {% endif %}
+
+
+
+
+    {% else %}
+    <h1>你尚未登录，只能访问公开内容！</h1>
+    {% endif %}
+
+{% endblock %}
+
