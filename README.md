@@ -27,16 +27,16 @@ pip install -r requirements.txt
 ```
 4.安装mysql数据库，进入mysite/settings.py配置数据库连接
 =========================================
-
-```DATABASES = {
-	‘default’: {
-		'ENGINE':'django.db.backends.mysql',    # 数据库类型，mysql
-		'NAME':'test',            				# database名
-		'USER':'root',               			# 登录用户
-		'PASSWORD':'root@123456',        		# 登录用户名
-		'HOST':'127.0.0.1',        				# 数据库地址
-		'PORT':'3306'              				# 数据库端口
-}
+```
+DATABASES = {
+    'default': {   
+        'ENGINE':'django.db.backends.mysql',     # 数据库类型，mysql
+        'NAME':'test',            #  database名
+        'USER':'root',               # 登录用户
+        'PASSWORD':'root@123',        #  登录用户名
+        'HOST':'127.0.0.1',        # 数据库地址
+        'PORT':'3306'              # 数据库端口
+    }
 }
 ```
 5.cmd到根目录下，生成数据库迁移记录
@@ -59,11 +59,12 @@ python manage.py createsuperuser
 ```
 python manage.py runserver 127.0.0.1:8000
 ```
+=========================================
 9.访问127.0.0.1:8000/login进入登录页面
-=========================================
+
 10.访问127.0.0.1:8000/register进入注册页面
-=========================================
+
 11.访问127.0.0.1:8000/admin进入后台管理页面
-=========================================
+
 
 
